@@ -25,8 +25,9 @@ images = {
     'towel': config['IMAGES']['Towel']
 }
 m = MultipartEncoder({'roomId': room,
-                      'text': ('only the clients are broken fyi... webex service is working fine at API layer. Everyone go ahead and switch to code.'),
-                      })
+                      'text': 'test',
+                      'files': (images['hephaestus'], open(images['hephaestus'], 'rb'),
+                      '')})
 
 r = requests.post('https://api.ciscospark.com/v1/messages', data=m,
                   headers={'Authorization': 'Bearer {auth}'.format(auth=aAuth),
