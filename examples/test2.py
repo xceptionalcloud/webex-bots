@@ -2,7 +2,7 @@ import configparser
 import requests
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 config = configparser.RawConfigParser()
-config.read('settings.ini')
+config.read('/var/www/settings.ini')
 
 gAuth = config['GIPHIER']['Token']
 kAuth = config['KHALKEUS']['Token']
